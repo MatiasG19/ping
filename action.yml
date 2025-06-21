@@ -10,7 +10,7 @@ inputs:
     description: "URL to ping"
     required: true
   attempts:
-    description: "Max attempts (default 10)"
+    description: "Max attempts"
 runs:
   using: "docker"
   image: "Dockerfile"
