@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping
-        using: matiasg19/ping@v1
+        uses: matiasg19/ping@main
         with:
           url: wwww.google.com
           attempts: 10
