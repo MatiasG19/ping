@@ -1,7 +1,8 @@
 FROM debian:latest
 
 RUN apt-get update && apt install -y --no-install-recommends \
-  curl  \
+  curl \
+  iproute2 \
   && apt upgrade -y \
   && rm -rf /var/lib/apt/lists/* 
 

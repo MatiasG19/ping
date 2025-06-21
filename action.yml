@@ -11,11 +11,9 @@ inputs:
     required: true
   attempts:
     description: "Max attempts"
+    required: true
 runs:
   using: "docker"
   image: "Dockerfile"
-  options: "--network=host"
+  args: ["${{ inputs.url }}", "${{ inputs.attempts }}"]
   entrypoint: "/ping.sh"
-  env:
-    URL: ${{ inputs.url }}
-    ATTEMPTS: ${{ inputs.attempts }}

@@ -12,8 +12,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build image
-        run: docker build -t ping .
-
       - name: Ping
-        run: docker run -e URL=www.google.com -e ATTEMPTS=10 ping
+        uses: ./
+        with:
+          url: www.google.com
+          attempts: 3

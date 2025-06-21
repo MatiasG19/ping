@@ -6,15 +6,17 @@ Simple ping action / script using curl.
 
 ```sh
 chmod +x ./ping.sh
-URL=www.google.com ATTEMPTS=10 ./ping.sh
+./ping.sh www.google.com 10
 ```
 
 ## Docker
 
 ```sh
 docker build -t ping .
-docker run -e URL=www.google.com -e ATTEMPTS=10 --network=host ping
+docker run --network=host ping www.google.com 10
 ```
+
+> Use `network=host` when pinging localhost
 
 ## GitHub Action
 
