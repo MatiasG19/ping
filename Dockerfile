@@ -3,7 +3,6 @@ FROM debian:latest
 RUN apt-get update && apt install -y --no-install-recommends \
   curl \
   iproute2 \
-  awk \
   && apt upgrade -y \
   && rm -rf /var/lib/apt/lists/* 
 
