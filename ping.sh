@@ -1,6 +1,6 @@
 #!/bin/bash
 
-hostip=$(/sbin/ip route|awk '/default/ { print $3 }')
+hostip=$(/sbin/ip route | awk '/default/ { print $3 }')
 url=$1
 attempts=$2
 url="${url//localhost/$hostip}"
