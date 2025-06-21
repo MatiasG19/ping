@@ -14,5 +14,6 @@ while [ $attempt -le "$ATTEMPTS" ]; do
   fi
 done
 
+echo
 echo "Could not reach $URL after $ATTEMPTS attempts."
 exit 1
