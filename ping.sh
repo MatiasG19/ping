@@ -2,10 +2,11 @@
 
 hostip=$(/sbin/ip route | awk '/default/ { print $3 }')
 url=$1
-attempts=$2
+# Replace localhost with host ip when script is executed in docker without "--network=host" option
 url="${url//localhost/$hostip}"
-
+attempts=$2
 attempt=1
+
 while [ $attempt -le "$attempts" ]; do
   if curl -X GET "$url"; then
     echo
