@@ -8,4 +8,4 @@ RUN apt-get update && apt install -y --no-install-recommends \
 COPY ping.sh /ping.sh
 RUN chmod +x /ping.sh
 
-ENTRYPOINT ["/ping.sh"]
+ENTRYPOINT ["bash", "-c", "/ping.sh ${{ inputs.url inputs.attempts }}"]
