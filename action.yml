@@ -15,7 +15,7 @@ inputs:
 runs:
   using: "docker"
   image: "Dockerfile"
-  network: host
+  args: ["--network=host"]
   entrypoint: "/ping.sh"
   env:
     URL: ${{ inputs.url }}
