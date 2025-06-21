@@ -16,4 +16,4 @@ jobs:
         run: docker build -t ping .
 
       - name: Ping
-        run: docker run -e URL=https://www.google.com -e ATTEMPTS=10 ping
+        run: docker run -e URL=google.com -e ATTEMPTS=10 ping
