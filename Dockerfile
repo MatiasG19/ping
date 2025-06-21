@@ -1,7 +1,7 @@
 FROM debian:latest
 
 RUN apt-get update && apt install -y --no-install-recommends \
-  curl  \
+  curl \
   && apt upgrade -y \
   && rm -rf /var/lib/apt/lists/* 
 
