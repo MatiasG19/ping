@@ -2,7 +2,7 @@
 
 attempt=1
 while [ $attempt -le "$ATTEMPTS" ]; do
-  if curl -f "$URL"; then
+  if curl -X GET "$URL"; then
     echo
     echo
     echo "Ping to $URL successful!"
