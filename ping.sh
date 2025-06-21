@@ -2,16 +2,18 @@
 
 attempt=1
 
-while [ $attempt -le $ATTEMPTS ]; do
-    if curl -f -s "$URL"; then
-    echo "Ping successful!"
+while [ $attempt -le "$ATTEMPTS" ]; do
+  if curl -f "$URL"; then
+    echo
+    echo
+    echo "Ping to $URL successful!"
     exit 0
-    else
+  else
     echo "Attempt $attempt of $ATTEMPTS"
     attempt=$((attempt + 1))
-    sleep 5  # Wait for 5 seconds before retrying
-    fi
+    sleep 5
+  fi
 done
 
-echo "Could not reach url after $ATTEMPTS attempts."
+echo "Could not reach $URL after $ATTEMPTS attempts."
 exit 1
