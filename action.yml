@@ -3,8 +3,8 @@ name: "ping"
 description: "Simple ping action"
 author: "MatiasG19"
 branding:
-  icon: "upload-cloud"
-  color: "blue"
+  icon: "check"
+  color: "purple"
 inputs:
   url:
     description: "URL to ping"
