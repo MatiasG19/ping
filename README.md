@@ -16,6 +16,8 @@ docker build -t ping .
 docker run -e URL=www.google.com -e ATTEMPTS=10 --network=host ping
 ```
 
+> Use `network=host` when pinging locally
+
 ## GitHub Action
 
 ```yml
