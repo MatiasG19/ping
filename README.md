@@ -13,7 +13,7 @@ URL=www.google.com ATTEMPTS=10 ./ping.sh
 
 ```sh
 docker build -t ping .
-docker run -e URL=www.google.com -e ATTEMPTS=10 ping
+docker run -e URL=www.google.com -e ATTEMPTS=10 --network=host ping
 ```
 
 ## GitHub Action
