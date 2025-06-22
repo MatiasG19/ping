@@ -15,9 +15,6 @@ jobs:
       - name: Overwrite action
         run: cp -f .github/actions/action.yml ./action.yml
 
-      - name: remove
-        run: cat action.yml
-
       - name: Ping
         uses: ./
         with:
