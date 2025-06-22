@@ -1,10 +1,6 @@
-FROM debian:12-slim
+FROM alpine/curl:8:14
 
-RUN apt-get update && apt install -y --no-install-recommends \
-  curl \
-  iproute2 \
-  && apt upgrade -y \
-  && rm -rf /var/lib/apt/lists/* 
+RUN apk update && apk add --no-cache iproute2 gawk
 
 COPY ping.sh /ping.sh
 RUN chmod +x /ping.sh
