@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM debian:12-slim
 
 RUN apt-get update && apt install -y --no-install-recommends \
   curl \
