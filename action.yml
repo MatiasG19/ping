@@ -3,8 +3,8 @@ name: "Simple Ping"
 description: "Simple ping action"
 author: "MatiasG19"
 branding:
-  icon: "check"
-  color: "purple"
+  icon: activity
+  color: green
 inputs:
   url:
     description: "URL to ping"
