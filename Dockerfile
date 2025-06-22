@@ -1,4 +1,4 @@
-FROM alpine/curl:8:14.1
+FROM alpine/curl:8.14.1
 
 RUN apk update && apk add --no-cache iproute2 gawk
 
