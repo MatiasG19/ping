@@ -12,8 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Overwrite action
+        run: cp -f .github/actions/action.yml ./action.yml
+
       - name: Ping
-        uses: ./.github/actions
+        uses: ./
         with:
           url: www.google.com
           attempts: 3
