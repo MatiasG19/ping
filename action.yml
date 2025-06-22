@@ -1,5 +1,5 @@
 ---
-name: "ping"
+name: "Simple Ping"
 description: "Simple ping action"
 author: "MatiasG19"
 branding:
