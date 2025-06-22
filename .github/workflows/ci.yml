@@ -12,6 +12,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Overwrite action
+        run: cp -f .github/actions/action.yml ./action.yml
+
       - name: Ping
         uses: ./
         with:

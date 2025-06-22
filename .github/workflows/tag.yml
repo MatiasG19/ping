@@ -2,7 +2,7 @@ name: Tag
 
 on:
   release:
-    types: [released, prereleased]
+    types: [released]
 
 jobs:
   docker-image:
@@ -33,5 +33,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/matiasg19/ping:debian-12
+          tags: ghcr.io/matiasg19/ping:latest
           labels: ${{ steps.meta.outputs.labels }}
