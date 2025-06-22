@@ -13,10 +13,8 @@ chmod +x ./ping.sh
 
 ```sh
 docker build -t ping .
-docker run --network=host ping www.google.com 10
+docker run ping www.google.com 10
 ```
-
-> Use `network=host` when pinging localhost
 
 ## GitHub Action
 
