@@ -14,7 +14,6 @@ inputs:
     required: true
 runs:
   using: "docker"
-  image: "Dockerfile"
-  context: ../../
+  image: "../../Dockerfile"
   args: ["${{ inputs.url }}", "${{ inputs.attempts }}"]
   entrypoint: "/ping.sh"
