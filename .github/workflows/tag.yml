@@ -1,9 +1,8 @@
-name: tag
+name: Tag
 
 on:
-  push:
-    branches:
-      - main
+  release:
+    types: [released, prereleased]
 
 jobs:
   docker-image:
