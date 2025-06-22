@@ -1,0 +1,19 @@
+---
+name: "Simple Ping"
+description: "Simple ping action"
+author: "MatiasG19"
+branding:
+  icon: activity
+  color: green
+inputs:
+  url:
+    description: "URL to ping"
+    required: true
+  attempts:
+    description: "Max attempts"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args: ["${{ inputs.url }}", "${{ inputs.attempts }}"]
+  entrypoint: "/ping.sh"
