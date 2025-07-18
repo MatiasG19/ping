@@ -36,11 +36,24 @@ jobs:
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
+        if: ${{ github.event_name == 'release' }}
         with:
           context: .
-          push: ${{ github.event_name == 'release' }}
+          push: true
           tags: |
             ghcr.io/matiasg19/ping:latest
             ghcr.io/matiasg19/ping:${{ github.ref_name }}
+          labels: ${{ steps.meta.outputs.labels }}
+          platforms: linux/amd64,linux/arm64
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v6
+        if: ${{ github.event_name == 'release' }}
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/matiasg19/ping:pre
+            ghcr.io/matiasg19/ping:${{ github.ref_name }}-pre
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64,linux/arm64
