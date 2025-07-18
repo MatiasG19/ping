@@ -36,7 +36,7 @@ jobs:
 
       - name: Build and push Docker image (latest)
         uses: docker/build-push-action@v6
-        if: ${{ github.event.release.release }}
+        if: ${{ !github.event.release.prerelease }}
         with:
           context: .
           push: true
