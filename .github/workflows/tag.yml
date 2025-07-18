@@ -2,7 +2,7 @@ name: Tag
 
 on:
   release:
-    types: [released]
+    types: [released, prereleased]
 
 jobs:
   docker-image:
@@ -38,7 +38,9 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: .
-          push: true
-          tags: ghcr.io/matiasg19/ping:latest
+          push: ${{ github.event_name == 'release' }}
+          tags: |
+            ghcr.io/matiasg19/ping:latest
+            ghcr.io/matiasg19/ping:${{ github.ref_name }}
           labels: ${{ steps.meta.outputs.labels }}
           platforms: linux/amd64,linux/arm64
