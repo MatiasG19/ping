@@ -6,14 +6,14 @@ Simple ping action / script using curl.
 
 ```sh
 chmod +x ./ping.sh
-./ping.sh www.google.com 10
+./ping.sh www.google.com 10 "echo 'ping failed'"
 ```
 
 ## Docker
 
 ```sh
 docker build -t ping .
-docker run ping www.google.com 10
+docker run ping www.google.com 10 "echo 'ping failed'"
 ```
 
 ## GitHub Action
@@ -28,4 +28,5 @@ jobs:
         with:
           url: wwww.google.com
           attempts: 10
+          on-fail: "echo 'ping failed'"
 ```

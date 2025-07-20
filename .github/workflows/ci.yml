@@ -20,3 +20,4 @@ jobs:
         with:
           url: www.google.com
           attempts: 3
+          on-fail: "echo 'ping failed'"

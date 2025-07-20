@@ -6,6 +6,7 @@ url=$1
 url="${url//localhost/$hostip}"
 attempts=$2
 attempt=1
+onfail=$3
 
 while [ $attempt -le "$attempts" ]; do
   if curl -X GET "$url"; then
@@ -22,4 +23,7 @@ done
 
 echo
 echo "Could not reach $url after $attempts attempts."
-exit 1
+if [ -z "$onfail" ]; then
+    exit 0
+fi
+bash -c "$onfail"
