@@ -12,6 +12,9 @@ inputs:
   attempts:
     description: "Max attempts"
     required: true
+  on-fail:
+    description: "Execute bash command on fail"
+    required: false
 runs:
   using: "docker"
   image: "docker://ghcr.io/matiasg19/ping:latest"
