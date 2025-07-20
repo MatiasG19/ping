@@ -24,6 +24,7 @@ done
 echo
 echo "Could not reach $url after $attempts attempts."
 if [ -z "$onfail" ]; then
-    exit 0
+    exit 1
 fi
 bash -c "$onfail"
+exit 1
