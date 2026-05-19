@@ -1,4 +1,4 @@
-FROM alpine/curl:8.17.0
+FROM alpine/curl:8.19.0
 
 LABEL maintainer "MatiasG19"
 LABEL org.opencontainers.image.description "Simple ping action / script using curl"
